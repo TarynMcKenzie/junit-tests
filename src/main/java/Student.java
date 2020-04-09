@@ -6,26 +6,59 @@ import java.util.ArrayList;
 
 public class Student {
 
-    // TODO: The Student class should have a constructor that sets both the name and id property, it initializes the grades property as an empty ArrayList.
     public ArrayList<Integer> grades;
+    private String name;
+    private long id;
+    public static long studentCounter = 0;
 
-    public Student(ArrayList<Integer> grades){
+    // TODO: The Student class should have a constructor that sets both the name and id property, it initializes the grades property as an empty ArrayList.
+    public Student(String name) {
 
-        this.grades = grades;
+        studentCounter++;
+
+        this.name = name; // set the student name
+
+        id = studentCounter;
+
+        grades = new ArrayList<>(); // initialize a new grade ArrayList
 
     }
 
     // TODO: The Student class should have the following methods:
 
     // returns the student's id
-    public long getId();
+    public long getId() {
+        return id;
+    }
+
     // returns the student's name
-    public String getName();
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
 
     // adds the given grade to the grades list
-    public void addGrade(int grade);
+    public void addGrade(int grade){
+
+        grades.add(grade);
+
+    }
+
     // returns the average of the students grades
-    public double getGradeAverage();
+    public long getGradeAverage(){
+
+        long total = 0;
+
+        for (Integer grade : grades) total += grade;
+
+        long average = total / grades.size();
+
+        return average; // returns the average of the students grades
+
+    }
 
     // TODO: As always, commit and push all your changes once you're done.
     // TODO: At the end of the exercise you will ended up with a Student.java and a StudentTest.java class.
