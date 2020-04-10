@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class StudentTest {
+
+    // ------------ CAN WE CREATE A NEW STUDENT OBJEC? -----------
     @Test
     public void testCreateStudent(){
         Student fer = new Student(1L, "fer");
@@ -13,6 +15,7 @@ public class StudentTest {
         assertNotNull(fer);
     }
 
+    // ------------ CAN WE GET THE STUDENT INFORMATION? -----------
     @Test
     public void testStudentFields(){
         Student fer = new Student(1L, "fer");
@@ -21,7 +24,7 @@ public class StudentTest {
         assertSame(0, fer.getGrades().size());
     }
 
-
+    // ------------ CAN WE ADD A NEW GRADE?-----------
     @Test
     public void testAddGrade(){
         Student fer = new Student(1L, "fer");
@@ -31,6 +34,7 @@ public class StudentTest {
         assertSame(80, fer.getGrades().get(1));
     }
 
+    // ------------ CAN WE GET AN AVERAGE? IS IT CORRECT? -----------
     @Test
     public void testAverageGrade(){
         Student fer = new Student(1L, "fer");
